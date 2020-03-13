@@ -82,51 +82,117 @@ public class HomeWork2 {
 
         for (int i = 0; i < someArr4.length; i++) {
             someArr4[i] = (int) (Math.random() * 3) - 1;
-            if (someArr4[i] == 1){
+            if (someArr4[i] == 1) {
 
                 count1 = count1 + 1;
             }
-            if (someArr4[i] == 0){
+            if (someArr4[i] == 0) {
 
-                count0 = count0+ 1;
+                count0 = count0 + 1;
             }
-            if (someArr4[i] == -1){
+            if (someArr4[i] == -1) {
 
                 count_1 = count_1 + 1;
             }
         }
         System.out.println(Arrays.toString(someArr4));
 
-            if ((count1 > count0) &&  (count1 > count_1)){
-                System.out.println("Чаще 1");
-            }
-            if ((count0 > count1) && (count0 > count_1)){
-                System.out.println("Чаще 0");
-            }
-            if ((count_1 > count0) && (count_1 > count1)){
-                    System.out.println("Чаще -1");
-            }
-
-
+        if ((count1 > count0) && (count1 > count_1)) {
+            System.out.println("Чаще 1");
+        }
+        if ((count0 > count1) && (count0 > count_1)) {
+            System.out.println("Чаще 0");
+        }
+        if ((count_1 > count0) && (count_1 > count1)) {
+            System.out.println("Чаще -1");
+        }
 
 
 //        Многомерные массивы
 //        Задача 1
 //        Создать двумерный массив из 8 строк по 5 столбцов в каждой из случайных целых чисел из отрезка [10;99]. Вывести массив в консоль.
 
+        int[][] newArr8 = new int[8][5];
+        for (int i = 0; i < newArr8.length; i++) {
+            for (int j = 0; j < newArr8[i].length; j++) {
+                newArr8[i][j] = (int) (Math.random() * 90) + 10;
+            }
+        }
+        System.out.println(Arrays.deepToString(newArr8));
 
-        /*Задача 2
-        Cоздать двумерный массив из 7 строк по 4 столбца в каждой из случайных целых чисел из отрезка [-5;5]. Вывести массив в консоль.
-        Определить и вывести на экран индекс строки с наибольшим по модулю произведением элементов.
-                Если таких строк несколько, то вывести индекс первой встретившейся из них.
 
-        Задача 3
-        Создать двумерный массив из 6 строк по 7 столбцов в каждой из случайных целых чисел из отрезка [0;9]. Вывести массив в консоль.
-        Преобразовать массив таким образом, чтобы на первом месте в каждой строке стоял её наибольший элемент.
-        При этом изменять состав массива нельзя, а можно только переставлять элементы в рамках одной строки.
-        Порядок остальных элементов строки не имеет значения (т.е. можно соврешить только одну перестановку, а можно отсортировать по убыванию каждую строку).
-                Вывести преобразованный массив в консоль.    */
+//        /*Задача 2
+//        Cоздать двумерный массив из 7 строк по 4 столбца в каждой из случайных целых чисел из отрезка [-5;5]. Вывести массив в консоль.
+//        Определить и вывести на экран индекс строки с наибольшим по модулю произведением элементов.
+//                Если таких строк несколько, то вывести индекс первой встретившейся из них.
+//        индекс первой встретившейся строки с наибольшим по модулю произведением элементов
+        int[][] newArr10 = new int[7][4];
+        int[] multiRows = new int[7];
+
+        for (int i = 0; i < newArr10.length; i++) {
+            multiRows[i] = 1;
+            for (int j = 0; j < newArr10[i].length; j++) {
+                newArr10[i][j] = (int) (Math.random() * 11) - 5;
+//                multiRows[i] = Math.abs(multiRows[i] * newArr10[i][j]);
+                multiRows[i] = multiRows[i] * newArr10[i][j];
+
+            }
+            multiRows[i] = Math.abs(multiRows[i]);
+        }
+        System.out.println(Arrays.toString(multiRows));
+        System.out.println("---------------");
+        System.out.println(Arrays.deepToString(newArr10));
+
+        int maxValue = -10000;
+        int maxIndex = -11;
+        for (int i = 0; i < multiRows.length; i++) {
+            if (multiRows[i] > maxValue) {
+                maxValue = multiRows[i];
+                maxIndex = i;
+
+            }
 
         }
+        System.out.println("индекс первой встретившейся строки с наибольшим по модулю произведением элементов " + maxIndex);
+        //        Задача 3
+//        Создать двумерный массив из 6 строк по 7 столбцов в каждой из случайных целых чисел из отрезка [0;9]. Вывести массив в консоль.
+//        Преобразовать массив таким образом, чтобы на первом месте в каждой строке стоял её наибольший элемент.
+//        При этом изменять состав массива нельзя, а можно только переставлять элементы в рамках одной строки.
+//        Порядок остальных элементов строки не имеет значения (т.е. можно соврешить только одну перестановку, а можно отсортировать по убыванию каждую строку).
+//                Вывести преобразованный массив в консоль.    */
+        int[][] newArr13 = new int[7][6];
+        int maxValue2 = -10000;
+        int maxIndex2 = -11;
+        int temp = 10_000;
+        for (int i = 0; i < newArr13.length; i++) {
+
+            for (int j = 0; j < newArr13[i].length; j++) {
+                newArr13[i][j] = (int) (Math.random() * 10);
+
+            }
+        }
+        System.out.println(Arrays.deepToString(newArr13));
+
+        for (int i = 0; i < newArr13.length; i++) {
+
+            maxValue2 = -10000;
+            maxIndex2 = -11;
+            for (int k = 0; k < newArr13[i].length; k++) {
+                if (newArr13[i][k] > maxValue2) {
+                    maxValue2 = newArr13[i][k];
+                    maxIndex2 = k;
+                }
+            }
+            temp = newArr13[i][0];
+            newArr13[i][0] = newArr13[i][maxIndex2];
+            newArr13[i][maxIndex2] = temp;
+
+        }
+        System.out.println(Arrays.deepToString(newArr13));
     }
+}
+
+
+
+
 
