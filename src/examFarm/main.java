@@ -1,5 +1,5 @@
 package examFarm;
 
-public class main {
+abstract class main {
 
 }
