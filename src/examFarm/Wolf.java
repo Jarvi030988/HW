@@ -2,6 +2,7 @@ package examFarm;
 
 public class Wolf extends WildAnimals {
 
-    int power = 3;
-
+    public Wolf(String name, int weight, int speed, int power) {
+        super(name, weight, speed, power);
+    }
 }

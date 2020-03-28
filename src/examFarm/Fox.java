@@ -1,5 +1,9 @@
 package examFarm;
 
 public class Fox extends WildAnimals{
-    int power = 1;
+
+    public Fox(String name, int weight, int speed, int power) {
+        super(name, weight, speed, power);
+    }
 }
+

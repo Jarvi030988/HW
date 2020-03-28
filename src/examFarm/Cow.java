@@ -2,7 +2,16 @@ package examFarm;
 
 
 public class Cow extends FarmAnimals implements CanRunAway, AnimalsForFood, CanGiveResourses {
-    private int numOfResources = 250;
 
+    public Cow(String name, int weight, int speed, int health0, int numOfResources) {
+        super(name, weight, speed, health0, numOfResources);
+    }
+    @Override
+    public void canGiveResourses() {
+    }
 
+    @Override
+    public void animalsForFood() {
+
+    }
 }
