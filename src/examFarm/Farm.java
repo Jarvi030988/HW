@@ -10,19 +10,24 @@ public class Farm {
     FarmAnimals[] farmAnimals = new FarmAnimals[10];
     WildAnimals[] wildAnimals = new WildAnimals[3];
 
-
-    public void Farm() {
+    public Farm() {
+        Farmer farmer = new Farmer();
         this.farmer = farmer;
+
         this.farmAnimals = farmAnimals;
+
     }
 
+
+
     public void passDay() {
-        farmer.numOfResources -= 2;
-        if (farmer.numOfResources == 0){
+
+        this.farmer.numOfResources -= 2;
+        if (this.farmer.numOfResources == 0){
             System.out.println("Игра закончена, ресурсов не осталось");
             return;
         }
-        farmer.takeResourses(farmAnimals);
+        this.farmer.takeResourses(farmAnimals);
         System.out.println("На ферме начался новый день ");
     }
 

@@ -1,8 +1,11 @@
 package examFarm;
 
 public class Farmer {
-    public int numOfResources = 5;
+    public int numOfResources;
 
+    public Farmer() {
+        this.numOfResources = numOfResources;
+    }
 
     public void canGiveFood() {
 

@@ -1,5 +1,7 @@
 package examFarm;
 
+import java.util.Random;
+
 public class main {
     public static void main(String[] args) {
         Farm farm = new Farm();
@@ -23,6 +25,30 @@ public class main {
         farm.addWildAnimal(wolf);
 
         farm.passDay();
+
+        Random random = new Random();
+//        System.out.println(random.nextInt(3));
+        int length = farm.farmAnimals.length;
+        int i1 = random.nextInt(length);
+
+        int lenght1 = farm.wildAnimals.length;
+        int i2 = random.nextInt(lenght1);
+
+        farm.wildAnimals[i2].eatFarmAnimal(farm.farmAnimals[i1]);
+
+        int lenght3 = farm.wildAnimals.length;
+        int i3 = random.nextInt(lenght3);
+        farm.farmer.awayTheAnimal(farm.wildAnimals[i3]);
+
+
+        for (int i = 0; i < farm.farmAnimals.length; i++) {
+            farm.farmer.feedTheAnimal(farm.farmAnimals[i]);
+        }
+
+        farm.farmer.takeResourses(farm.farmAnimals);
+
+
+//    int length = v.length;
 
 
     }

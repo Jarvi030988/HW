@@ -80,10 +80,12 @@ public class FarmAnimals implements CanRunAway {
     }
 
     public void setHealth(int health) {
+
         this.health = health;
     }
 
     public int getNumOfResources() {
+
         return numOfResources;
     }
 
@@ -93,8 +95,8 @@ public class FarmAnimals implements CanRunAway {
     }
 
     public void setHealth0(int health0) {
-        if (health0 >= 0) {
-            this.health0 = health0;
+        if (health0 <= 0) {
+            this.health = health0;
         }
     }
 }
