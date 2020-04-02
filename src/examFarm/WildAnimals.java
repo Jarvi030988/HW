@@ -53,6 +53,7 @@ public class WildAnimals implements CanCatch {
     }
 
     public int getPower() {
+
         return power;
     }
 
@@ -64,29 +65,34 @@ public class WildAnimals implements CanCatch {
     }
 
     public int getStrikes() {
+
         return strikes;
     }
 
     public void setStrikes(int strikes) {
+
         this.strikes = strikes;
     }
 
     public boolean isComeBack() {
+
         return comeBack;
     }
 
     public void setComeBack(boolean comeBack) {
+
         this.comeBack = comeBack;
     }
 
     public void eatFarmAnimal(FarmAnimals farmAnimal) {
+        System.out.println(farmAnimal);
         if (farmAnimal.getSpeed() > this.speed) {
             System.out.println("Фермерское животное " + farmAnimal.getName() + "убежало от " + this.name);
             return;
         }
         if (farmAnimal.getHealth() <= this.power) {
             farmAnimal.wasEaten();
-            System.out.println("Фермерское животное" + farmAnimal.getName() + "съедено");
+            System.out.println("Фермерское животное " + farmAnimal.getName() + " съедено");
         } else {
 //            farmAnimal.health = farmAnimal.health - this.power;
             farmAnimal.setHealth(farmAnimal.getHealth() - this.power);

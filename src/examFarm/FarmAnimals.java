@@ -32,7 +32,7 @@ public class FarmAnimals implements CanRunAway {
     public void wasEaten() {
 
         this.eaten = true;
-        System.out.println("Животное" + FarmAnimals.this.name + "съедено");
+        System.out.println("Животнго " + FarmAnimals.this.name + " теперь нет на ферме");
     }
 
     @Override

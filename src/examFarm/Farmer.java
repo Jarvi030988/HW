@@ -19,7 +19,7 @@ public class Farmer {
                 farmAnimals[i].setNumOfResources(farmAnimals[i].getNumOfResources() - 1);
 //                numOfResources + farmAnimals[i].numOfResources = farmer.numOfResources;
                 this.numOfResources += 1;
-                System.out.println("Фермер собрал ресурсы со всех животных фермы");
+
             }
         }
     }
@@ -28,12 +28,12 @@ public class Farmer {
         if (farmAnimal instanceof CanGiveResourses) {
             if (farmAnimal.getHealth() >= farmAnimal.getHealth0()) {
                 farmAnimal.setNumOfResources(farmAnimal.getNumOfResources() + 1);
-                System.out.println("Фермерского животного накормили" + farmAnimal.getName());
+                System.out.println("Фермерское животное " + farmAnimal.getName() + " накормили");
                 return;
             }
             farmAnimal.setHealth(farmAnimal.getHealth() + 1);
             farmAnimal.setNumOfResources(farmAnimal.getNumOfResources() + 1);
-            System.out.println("Фермерского животного накормили" + farmAnimal.getName());
+            System.out.println("Фермерское животное " + farmAnimal.getName() + " накормили");
         /*farmAnimal.health += 1;
         farmAnimal.numOfResources +=1;*/
         }
@@ -41,7 +41,7 @@ public class Farmer {
 
     public void awayTheAnimal(WildAnimals wildAnimal) {
 
-        System.out.println("Уходи дикое животное" + wildAnimal.getName());
+        System.out.println("Уходи дикое животное " + wildAnimal.getName());
         wildAnimal.setStrikes(wildAnimal.getStrikes() - 1);
 //        wildAnimal.strikes -= 1;
         if (wildAnimal.getStrikes() <= 0) {

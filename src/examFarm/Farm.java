@@ -6,19 +6,19 @@ import newSchool.Teacher;
 //тут фермер, тут дом.животные, + цикл кто победит дом.животные, дикие живвотные или фермер
 public class Farm {
     Farmer farmer;
-
+    int numberOfFarmAnimals; // ***
+    int numberOfWildAnimals; // ***
     FarmAnimals[] farmAnimals = new FarmAnimals[10];
     WildAnimals[] wildAnimals = new WildAnimals[3];
 
     public Farm() {
         Farmer farmer = new Farmer();
         this.farmer = farmer;
-
         this.farmAnimals = farmAnimals;
-
+        this.wildAnimals = wildAnimals;
+        this.numberOfFarmAnimals = 0; // ***
+        this.numberOfFarmAnimals = 0; // ***
     }
-
-
 
     public void passDay() {
 
@@ -35,12 +35,17 @@ public class Farm {
     //    public void addAnimals[]
     //    private Teacher[] teacherArray = {};
     public void addFarmAnimal(FarmAnimals animal) {
+        if (this.numberOfFarmAnimals > 10){
+            System.out.println("Превышен лимит животных");//***
+            return;
+        }
         for (int i = 0; i < farmAnimals.length; i++) {
             if (farmAnimals[i] == null) {
                 farmAnimals[i] = animal;
                 break;
             }
         }
+        this.numberOfFarmAnimals+=1; //***
     }
 
     public void addWildAnimal(WildAnimals animal) {
@@ -50,6 +55,7 @@ public class Farm {
                 break;
             }
         }
+        this.numberOfWildAnimals +=1;//***
     }
 }
 //    public void addFarmAnimal(String type, String name, int weight, int speed, int health0, int numOfResources) {

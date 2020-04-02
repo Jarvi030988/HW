@@ -23,15 +23,21 @@ public class main {
         farm.addWildAnimal(bear);
         farm.addWildAnimal(fox);
         farm.addWildAnimal(wolf);
-
+      /*  for (int i = 0; i < farm.wildAnimals.length ; i++) {
+            System.out.println(farm.wildAnimals[i]);
+        }
+        for (int i = 0; i < farm.farmAnimals.length ; i++) {
+            System.out.println(farm.farmAnimals[i]);
+        }*/
         farm.passDay();
 
         Random random = new Random();
 //        System.out.println(random.nextInt(3));
-        int length = farm.farmAnimals.length;
+        int length = farm.numberOfFarmAnimals;//***
+
         int i1 = random.nextInt(length);
 
-        int lenght1 = farm.wildAnimals.length;
+        int lenght1 = farm.numberOfWildAnimals;//***
         int i2 = random.nextInt(lenght1);
 
         farm.wildAnimals[i2].eatFarmAnimal(farm.farmAnimals[i1]);
