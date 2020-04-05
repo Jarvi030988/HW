@@ -1,6 +1,5 @@
 package Converter;
 
-
 public class Main {
     public static void main(String[] args) {
         //создать объект в цельсиях и вывести это значение
@@ -16,9 +15,6 @@ public class Main {
         converterF1.convertValue(10.4);
         System.out.println("Температура в Фаренгейтах = " + converterF1.getConvertedValue());
 
-
-
-
         ConvertToMax converterMax1 = new ConvertToMax();
         converterMax1.convertValue(2);
         System.out.println("Температура по Максу = " + converterMax1.getMaxTemp());
@@ -26,10 +22,5 @@ public class Main {
         Converter bs = BasicConverter.returnConverter("KL");
         bs.convertValue(10.4);
         System.out.println("Температура =" + bs.getConvertedValue());
-
-
-
-
-
     }
 }
